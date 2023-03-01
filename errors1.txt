@@ -1,0 +1,38 @@
+02:21:48 - [WebFetchInvDescModule]: Closing
+02:21:48 - [WATCHDOG]: Removing thread InventoryWorkerThread0, ID 28
+02:21:48 - [WATCHDOG]: Removing thread InventoryWorkerThread1, ID 29
+02:21:48 - [XEngine]: Shutting down 0 scripts in Default Region
+02:21:48 - [APPLICATION]: 
+APPLICATION EXCEPTION DETECTED: System.UnhandledExceptionEventArgs
+
+Exception: System.ArgumentNullException: Value cannot be null.
+Parameter name: obj
+  at (wrapper managed-to-native) System.Threading.Monitor.Exit(object)
+  at System.Threading.SemaphoreSlim.Wait (System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x0018e] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Collections.Concurrent.BlockingCollection`1[T].TryTakeWithNoTimeValidation (T& item, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken, System.Threading.CancellationTokenSource combinedTokenSource) [0x0007e] in <a9a08e39ba304bd0a84c49bd158dfc02>:0 
+  at System.Collections.Concurrent.BlockingCollection`1[T].TryTake (T& item, System.Int32 millisecondsTimeout) [0x0000e] in <a9a08e39ba304bd0a84c49bd158dfc02>:0 
+  at OpenSim.Region.ClientStack.Linden.GetAssetsModule.DoAssetRequests () [0x00002] in <c9c7b732c5b44b21831b4afacf4e445b>:0 
+  at System.Threading.ThreadHelper.ThreadStart_Context (System.Object state) [0x00017] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x0008d] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state) [0x00031] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Threading.ThreadHelper.ThreadStart () [0x0000b] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+
+Application is terminating: True
+
+[ERROR] FATAL UNHANDLED EXCEPTION: System.ArgumentNullException: Value cannot be null.
+Parameter name: obj
+  at (wrapper managed-to-native) System.Threading.Monitor.Exit(object)
+  at System.Threading.SemaphoreSlim.Wait (System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x0018e] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Collections.Concurrent.BlockingCollection`1[T].TryTakeWithNoTimeValidation (T& item, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken, System.Threading.CancellationTokenSource combinedTokenSource) [0x0007e] in <a9a08e39ba304bd0a84c49bd158dfc02>:0 
+  at System.Collections.Concurrent.BlockingCollection`1[T].TryTake (T& item, System.Int32 millisecondsTimeout) [0x0000e] in <a9a08e39ba304bd0a84c49bd158dfc02>:0 
+  at OpenSim.Region.ClientStack.Linden.GetAssetsModule.DoAssetRequests () [0x00002] in <c9c7b732c5b44b21831b4afacf4e445b>:0 
+  at System.Threading.ThreadHelper.ThreadStart_Context (System.Object state) [0x00017] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x0008d] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state) [0x00031] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+  at System.Threading.ThreadHelper.ThreadStart () [0x0000b] in <d0e12f672b88444ab4b6d9b2ecf20142>:0 
+02:21:48 - [SCENE]: Dispose Physics
+02:21:48 - [JobEngine]: Stopping ServiceThrottle
+
+

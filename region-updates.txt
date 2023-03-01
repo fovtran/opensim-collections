@@ -1,0 +1,7 @@
+generate map
+restart
+
+terrain bake
+terrain elevate 15
+terrain revert
+terrain load maptiles/luminar.png
