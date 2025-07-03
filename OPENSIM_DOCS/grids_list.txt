@@ -1,0 +1,280 @@
+OSgrid: hg.osgrid.org:80
+GreekLife: hg.grid-greeklife.info:8002
+DigiWorldz: login.digiworldz.com:8002
+Sacrarium: sacrarium24.ru:8002
+Metropolis: hg.metro.land:80
+ZetaWorlds: hg.zetaworlds.com:80:Welcome
+Eureka World: 54.77.238.20:9000
+Great Canadian Grid: login.greatcanadiangrid.ca:8002
+Foundation Grid: gridfoundation.ddns.net:8002
+Kitely: grid.kitely.com:8002
+Party Destination Grid: partydestinationgrid.com:8002
+Exo-Life: hg.exo-life.onl:8032
+Kroatan Grid: kroatan.de:8002
+VartownGrid: vartown-grid.ddns.net:8002
+Discovery Grid: discoverygrid.net:8002
+Breath in Freedom: breath-grid.info:8002
+Freedom Grid: freedomgrid.world:8002
+Dorena’s World: dorenas-world.de:8002
+Free Life: freelife.outworldz.net:8002
+Craft World: craft-world.org:8002
+Tranquility: tranquility-grid.info:8002
+Dynamic Worldz: grid.dynamicworldz.com:8002
+Neverworld: hg.neverworldgrid.com:8002
+Social Mouse: grid.thesocialmouse.net:8002
+Anettes Welt: anettes-welt.de:8002
+First Life Brasil: firstlifebrasil3d.ddns.net:8002
+Nextlife World: nextlife-world.de:8002
+3rd Rock Grid: grid.3rdrockgrid.com:8002
+Pacification Grid: grid-pacification.info:8002
+Counter Earth: jand.dyndns.biz:7002
+Virtual Brasil: mundo.virtualbrasil3d.com.br:8002
+Virtuality Grid: grid.virtualitygrid.com:8002
+Utopia Skye: utopiaskyegrid.com:8002
+Littlefield: lfgrid.com:8002
+EdMondo: slw.indire.it:8002
+Vida Dupla: vidadupla.com.br:8002
+Gevolution: login.gevolutionworld.com:8002
+FrancoGrid: hg.francogrid.org:80
+RAKis World: yeali.outworldz.net:8002
+MisFitz Grid: misfitzgrid.com:8002
+3rd Life Grid: 3rdlifegrid.com:8002
+Eros Resort: opensim.bci3d.com:8002
+Japan Open Grid: jogrid.net:8002
+Encore Escape: goto.theencoreescape.com:8002
+Outworldz: www.outworldz.com:9000
+Tangle Grid: tanglegrid.net:8002:HG Station 1
+OurGrid Life: ourgrid.life:80
+The Verse: theverse.ddns.net:8002
+AweSim Worlds: AweSimWorlds.com:8002:Awesim
+Panthera Grid: panthera-grid.club:8002:Panthera Welcome Island
+Pink Panthera: login.pantheragrid.com:8002
+Keng City Grid: hg.kengcity.net:8002
+Logicamp: logicamp.org:8002
+Forgotten Realities: world.forgottenrealities.com:8002
+Astralia: astralia.eu:8002
+AviWorlds: login.aviworlds.com:8002
+Naras Nook: world.narasnook.com:8900
+Lost World: lostworld-os.com:8002
+TheKaz Grid: thekazgrid.com:8002
+Ausgrid: ausgrids.biz:8002
+Golden Palace Gaming: hg.golden-palace-gaming.com:8092
+Mobius Grid: main.mobiusgrid.us
+Chimerus: chimerus.com:8002
+Second Chance 3D: login.secondchance3d.com.br:8002
+Joildan: Joildan.Outworldz.net:8002
+The Haven Grid: thehavengrid.outworldz.net:8002
+Tulane SoPA Metaverse: 209.126.208.161:8072
+Zone Nations: login.zonenations.com:8002
+Calypso 3D: 3d.calypso3d.fr:8002
+Adreans-World: adreans-world.from-fl.com:8000
+Offworld: offworld.eu:8002
+Dreamlife: dreamlife.outworldz.net:8002
+Fae Farms: alanna.outworldz.net:8002
+Sniky Grid: snikygrid.org.uk:8002
+RB Virtual Farm Grid: ridebackfarmgrid.com:8002
+OpenSimulator Community Conference: cc.opensimulator.org:8002
+Speculoos: speculoos.world:8002
+Earthlab Grid: earthlab.uoi.gr:8002
+Land DownUnder: ldu.outworldz.net:8002
+That Place: hg.thatplace.online:8002
+Secret Life 3D: secretlife3d.com:8002
+Grid Life: login.gridlife.nl:8002
+3DLES: edugrid.3dles.com:8002
+AnonGrid: anongrid.webredirect.org:8002
+Ignis Fatuus: ignis-fatuus.no-ip.biz:8002
+Bubblesz: bubblesz.nl:8002
+Kater and Friends: kater-and-friends.ddnss.de:8002
+Virtual Life Brasil: login.virtuallifebrasil.com.br:8002
+Guinevere Project: world.guinevereproject.eu:8002
+Ozzie World Grid: ozzieworld.com:8002
+Nymph: nymphgrid.com:8002
+Infinite Grid: grid.infinitegrid.org:8002
+Lanlar: lanlar.de:8002
+Zindraya: zindraya.com:8002
+GerGrid: gergrid.de:8002
+Grid Nirvana: grid.gridnirvana.net:4002
+KiWo Grid: kikiandwollex.de:8002
+Icelady Grid: iceladygrid.de:8002
+Agent: vrplayground.ca:8002
+VR Playground: vrplayground.ca:8002
+Ingen-Lab: ingen-lab.com:8002
+RAKis Reality: qae.outworldz.net:7002
+Virlands: virlands.world:8002
+AnSky: login.ansky.ca:8002
+Avacon: grid.avacon.org:8002
+AiLand: ai.vue.ed.ac.uk:8002
+KiwiGrid: kiwigrid.net.nz:8002
+Furry World: Furry-World.de:9298
+WestWorld Grid: westworldgrid.com:8102
+Kalasiddhi Grid: kalasiddhigrid.com:8002
+Dolfins Dream World: dolphinsdream.ddns.net:8002
+Panda Grid: panda.outworldz.net:8002
+Dreamscape: dsgrid.nl:8002
+Skytec Grid: skytecgrid.com:8002
+92 Miles Grid: 92MilesGrid.com:8002
+Baller Nation: login.ballernation.us:8002
+Gay Pride: virtualgaypride.com:8002
+Liberty Italian Grid: italiafantasy.ddns.net:8002
+Savage Grid: polynesia.dnsalias.com:8002
+Hypergrid Life: hypergrid.life:80
+Quintonia: worlds.quintonia.net:8002
+Forbidden Grid: forbiddengrid.outworldz.net:8002
+Out & Proud Grid: grid.outandproud.life:8002
+Atlantide: real-3d.zapto.org:8002
+Decadencia: decadence.ddns.net:8002
+Grimm: decadence.ddns.net:8002
+Dracsoom: dracsoom.ddns.net:9000
+Xmir: grid.xmir.org:8002
+Argofantasy: argofantasy.it:8002
+Middle Earth: kanada.outworldz.net:8002
+Yaras Welt: wunderland.vaptvoip.com:8002
+Virtual ABDL Grid: login.virtualabdl.com:8002
+Kohaku Grid: amber.outworldz.net:8002
+Hartland: myworld.myddns.me:8002
+Rezmela: grid.rezmela.net:8002
+Yet Another Grid: yang.outworldz.net:8002
+DevIgor’z Worlds: devigor.tk:8002
+New Genres Grid: hg.ngrid.org:8002
+Foto50: demogrid.foto50.com:8002
+jOpenSimWorld: grid.jopensim.com:8002:jOsJump4k, grid.jopensim.com:8002:jOsJump8k, grid.jopensim.com:8002:HomeRegion
+OzKanga Grid: ozziegrid.selfip.biz:8002
+Virtual Islands: Virtual-Islands.de:8002
+Fearless Mysteries: www.fearlessmysteries.eu:8002
+Pathway: pathway.outworldz.net:8002
+Tedesco Sim’s: hajos-welt.de:8002
+Openvue: virtual.aiai.ed.ac.uk:8002
+Tropical Isle: sailonbye.com:9000
+Binders World: binders.world:8002
+Souls of Vineta: souls-of-vineta.de:8002:Vineta
+Neustadt: neustadt.ddns.net:9000
+Phantom Rose: phantomrose.outworldz.net:8002
+Waya Grid: wayagrid.co:8002
+TUIS Open Grid: opensim.tuis.ac.jp:8002
+Gimisa: 3d.gimisa.ca:9000
+AIRE Mille Flux: grid.aire-mille-flux.org:8002
+UCI Mondego vLab: nile.ics.uci.edu:9000
+ScienceCircle: sciencecircle.org:8002
+Encitra Home Grid: home.encitragrid.com:8002
+Your Worlds: yourworlds.eu:8002
+Aviarium: aviariumgrid.com:8002
+CHWGrid: opensim.windesheim.nl:8002
+Grille EVER: ever.unistra.fr:8002
+CreaNovale Grid: hg.creanovale.ca:8052
+2Worlds2Go: hg.2worlds2go.se:8002
+Fish World: fish-world.net:9000
+Independence: independence.outworldz.net:8002
+Lake Kindred Spirit: Aderima.Outworldz.net:8002
+Bridgemere: bridgemere.outworldz.net:8002
+RS Systems: rssystems.hopto.org:8002
+Seconds: secondsdw.outworldz.net:8002
+The One Jam: theonejam.us:8002
+Our Hometown: grid.rnrussell.com:8002
+WestWorld Outworldz: westworld.outworldz.net:8002
+Takland: mikeland.ddns.net:9002
+Sant World: santworld.outworldz.net:8002
+Fantasy Island: myvr.ddns.me:8002
+MyOpenGrid: hg.myopengrid.com:80:Plaza Mayor
+Metaverse Concept: hg.metaverseconcept.com:8002
+Karmalot: karmalot-grid.co.uk:8102
+Freedomland: asitaba.ddns.net:9000
+Yugen World: yugenworld.ddns.net:9000
+Metaworld: metaworld.outworldz.net:8002
+OB: dreamworldz.outworldz.net:8002
+BiggWorld: biggworld.outworldz.net:8002
+Pear Lake: pearllake.outworldz.net:8002
+Thai VR Virtual World: virtualworld.space:8002
+SFgrid: sfgrid.ddnss.org:8002
+Kyle Archipelago: kylearchipelago.com:8002
+Auth: opensim.med.auth.gr:9000
+Sunvibes Grid: sun100.sunvibesgrid.net:8002
+Uradriembor: uradriembor.outworldz.net:8002
+Mikeland: mikeland.ddns.net:8002
+Gyssy: gyssy.net:9000
+BHGrid: bhgrid.work:8002
+Edgewater Valley: edgewatervalley.com:8002
+Wonder: wonder.outworldz.net:8002
+EdgeWaterValley: edgewatervalley.com:8002
+Blackswan: hg.blackswan.world:8002
+Athabasca University: opensim.athabascau.ca:9000
+Avatar Sex Grid: asg.dyndns.ws:8002
+Insight Concepts: gcse.dyndns.org:8002
+Greenworld: greenworld.online:9022
+Outworldz Pirateland HG: youarewelcome.selfhost.eu:8002
+MMDA: daesa.outworldz.net:8002
+Worldz Away: robust.outworldz.net:8002
+Skooko: skookolife.com:8002
+Bachmans Hideout: bachmans-hideout.outworldz.net:8002
+Fiet: fiet.outworldz.net:8002
+Gangsta Grid: gangstagrid.outworldz.net:8002
+Keraith Grid: keraith.outworldz.net:8002
+Love: love.outworldz.net:8002
+Peaceful Valley 2: peacefulvalley2.outworldz.net:8002
+Beta Technologies: opensim.betatechnologies.info:8002
+FarWorldz: farworldz.net:8002
+Admeja: admeja.bounceme.net:8002:Neuanzere Isle
+MajWorld: hedien.outworldz.net:8002
+Your World: gyssy.net:9000
+Poqpoq: p0qp0q.com:9000
+Alterworld Grid: hg.alterworld.us:7002
+Virtual Dreamz: VirtualDreamz.Outworldz.net:8002
+Angel Souls: Angel-Souls.de:8002
+Chez moi: masim.madonie.org:9000
+DreamGrid: aksum.outworldz.net:8002
+Yippee Ki-Ay Blues Grid: yippee-ki-ay.com:9003
+Handelsplanet Linora V: grid.foevgem.de:8002
+SeaPort Rose: seaportrose.outworldz.net:8002
+Virtual Ability: 209.126.208.163:9022
+Mreža regij: opensimulator.glazer.si:8002
+Studio 1: studio1.outworldz.net:8002
+DWGrid: dwgrid.nl:8002
+Pseudospace: grid.pseudospace.net:8002
+YourSimSpot: YourSimSpot.com:9000
+New Zealand Virtual World Grid – Otago: sbis4121.otago.ac.nz:8002
+LeBourg: lebourg.lcofrance.org:9000
+Relliketh Grid: rellikethgrid.ddns.net:8002
+Schutz American School: 209.126.208.163:9005
+Starfleet Medical: starfleetmedical.ml:80
+JokaydiaGrid: svc.jokaydiagrid.net:8002
+PMGrid: pmgrid.org:8002
+Virtualife: grid.serveirc.com:8002
+Miki Kiti Tiki: tikitronic.com:9000:miki kiti tiki
+VIBE: Virtual Islands for Better Education: vibe.bio-se.info:9000
+Open Virtual Worlds: apollo.cs.st-andrews.ac.uk:8002:Central Hub
+Immersion Tools: grid.suboceana.fr:8002
+VIBE: Nova Archeology: nova.bio-se.info:9000
+VIBE: Genome Island: genome.bio-se.info:9000
+VIBE: BIOME: biome.bio-se.info:9000
+Techland: techlandgrid.it:8002
+Nemesis 3D: badsworld.com:8002
+VIBE: BIOME4KIDS: biome4kids.bio-se.info:9000
+Majickal Life: majickallife.com:9000
+Virtual World City: grid.virtualworldcity.com:8002
+VIBE: Africa Traveler: africatraveler.bio-se.info:9000
+Endivatomic World: endivatomic.eu:8002
+Atek Grid: grid.atekgrid.com:8002
+Xntra City: login.xntracity.com:8102
+T-Grid: hg.viewtwo.net:8600
+Keystone Grid: hg.keystonegrid.com:9000
+Alife Virtual: grid.alifevirtual.com:8002
+PaderGrid: paderdesign.anydns.info:9000
+Virtual Life EU: virtual-life.eu:8002
+Servex Grid: servex.lffl.de:9012
+CyberFace: login.cyber-face.info:8002
+The Public World: thepublicworld.de:8002
+Vibel: grid.vibel.eu:8002
+Ancient Rome: ancient-rome.eu:80
+HGLuv: grid.hgluv.com:8302
+Vgrid: vgrid.ufpel.edu.br:9000:Campus Virtual
+Krabat Grid: krab.at:8002
+Rainbow Ridge Grid: rainbowridgegrid.servegame.com:9000
+Mogor: mogor.ddns.net:9000
+GridExperience: hg.gridexperience.com:8002
+Terraworldz: terraworldz.com:8002
+Caprica: caprica.1studi.ru:9000
+WorldzAway: robust.outworldz.net:8002
+Shinobar: shinobar.server-on.net:9000
+Amber Grove: ambergrove.eu:80
+GridExperience: hg.gridexperience.com:8002
+TexLand Grid: texland.no-ip.biz:8002
+Virtual RBM: virtualrbm.com:8002

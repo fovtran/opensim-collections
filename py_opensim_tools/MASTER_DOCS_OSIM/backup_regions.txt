@@ -1,0 +1,78 @@
+CONSOLE SCRIPT "BACKUP.TXT"
+
+; Description: of BACKUP.TXT
+; Creates a Full System Backup of all critical data
+;
+; Creates OAR, XML2, R32 (Region Terrain Files), and places them into the predefined folder structure.
+; Modify the folder structure according to your installation
+;
+; NOTE The Export goes to the default as defined in opensim.ini it is NOT SUGGESTED that this be changed
+;
+; EXAMPLE is provided for a multi-region install. If you only have one region , or more adjust accordingly
+; RENAME Region1, Region2 etc ... according to your region names
+; 
+; OAR FILES ! They do take a while depending on the volume of data on the region. The script will proceed
+; and the commands will be queued and processed. IF you watch the destination folder, you will see teh OAR files grow 
+; as they are being written out to the hard drive. Be Patient if you have a large installation.
+; This will imapct system response to those In-World on the region being processed!
+;
+change region root
+backup
+export save-all
+;
+change region Region1
+terrain save c:\OpenSim\BACKups\TERRAINS\Region1.r32
+save xml2 c:\OpenSim\BACKups\XML2\Region1.xml
+save oar c:\OpenSim\BACKups\OAR\Region1.oar
+;
+change region Region2
+terrain save c:\OpenSim\BACKups\TERRAINS\Region2.r32
+save xml2 c:\OpenSim\BACKups\XML2\Region2.xml
+save oar c:\OpenSim\BACKups\OAR\Region2.oar
+;
+; REPEAT AS NECESSARY, edit "Region#" and change it to YOUR REGION NAME
+
+
+RESTORATION:
+To Run this script, type the following in your console IF RESTORE.TXT is saved in your \bin folder.
+command-script restore.txt
+
+CONSOLE SCRIPT "RESTORE.TXT"  
+
+; FULL RESTORE PROCESS for OPENSIM CONSOLE
+;
+; RESTORES OAR, R32 (Region Terrain Files), and places them into the Original Regions
+; from the Backup\Folder structures as previously defined
+; CAN be used to restore XML2 but commented out, there as last resort, IF needed
+;
+; EXAMPLE is provided for a multi-Region install. If you only have one Region , or more adjust accordingly
+; RENAME Region1, Region2 etc ... according to your Region names
+; 
+; OAR FILES ! They do take a while depending on the volume of data on the Region. The script will proceed
+; and the commands will be queued and processed. 
+;
+change region Region1
+terrain load c:\OpenSim\BACKups\TERRAINS\Region1.r32
+load oar c:\OpenSim\BACKups\OAR\Region1.oar
+; load xml2 c:\OpenSim\BACKups\BACKups\XML2\Region1.xml
+;
+change region Region2
+terrain load c:\OpenSim\BACKups\TERRAINS\Region2.r32
+load oar c:\OpenSim\BACKups\OAR\Region2.oar
+; load xml2 c:\OpenSim\BACKups\XML2\Region2.xml
+;
+; REPEAT AS NECESSARY, edit "Region#" and change it to YOUR REGION NAME 
+;
+; you will see messages on the console as it completes the queued tasks
+;
+
+
+ 
+
+BATCH File Name: FullBackup.bat
+Command to execute: Run in command prompt OR Task Scheduler (see references at bottom of page)
+Description: Copies opensim SQL database out & Everything else Important
+CAVEATS: none known
+LOCATION: Place in folder with other Batch CMD files @ C:\OpenSim\InstanceA Where InstanceA is the directory ABOVE  C:\OpenSim\InstanceA\bin
+DEPENDENCIES: Use the Posted Console command-script following this, They work together!
+

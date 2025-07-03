@@ -1,0 +1,100 @@
+#
+#	cvsup -g -L 2 ports-supfile
+# host=CHANGE_THIS.FreeBSD.org
+#		This specifies the server host which will supply the
+#		file updates.  You must change it to one of the CVSup
+#		mirror sites listed in the FreeBSD Handbook at
+#		http://www.freebsd.org/doc/handbook/cvsup.html#CVSUP-MIRRORS.
+#		You can	override this setting on the command line
+#		with cvsup's "-h host" option.
+#
+# base=/var/db
+#		This specifies the root where CVSup will store information
+#		about the collections you have transferred to your system.
+#		A setting of "/var/db" will generate this information in
+#		/var/db/sup.  You can override the "base" setting on the
+#		command line with cvsup's "-b base" option.  This directory
+#		must exist in order to run CVSup.
+#
+# prefix=/usr
+#		This specifies where to place the requested files.  A
+#		setting of "/usr" will place all of the files requested
+#		in "/usr/ports" (e.g., "/usr/ports/devel", "/usr/ports/lang").
+#		The prefix directory must exist in order to run CVSup.
+
+# Defaults that apply to all the collections
+#
+# IMPORTANT: Change the next line to use one of the CVSup mirror sites
+# listed at http://www.freebsd.org/doc/handbook/cvsup.html#CVSUP-MIRRORS.
+*default host=cvsup.FreeBSD.org
+*default base=/var/db
+*default prefix=/usr
+*default release=cvs tag=.
+*default delete use-rel-suffix
+*default compress
+
+#ports-all
+
+ports-base
+#ports-accessibility
+#ports-arabic
+#ports-archivers
+#ports-astro
+#ports-audio
+#ports-benchmarks
+#ports-biology
+#ports-cad
+#ports-chinese
+#ports-comms
+#ports-converters
+ports-databases
+#ports-deskutils
+ports-devel
+#ports-dns
+#ports-editors
+#ports-emulators
+#ports-finance
+#ports-french
+#ports-ftp
+#ports-games
+#ports-german
+ports-graphics
+#ports-hebrew
+#ports-hungarian
+#ports-irc
+#ports-japanese
+ports-java
+#ports-korean
+#ports-lang
+#ports-mail
+ports-math
+#ports-misc
+#ports-multimedia
+ports-net
+#ports-net-im
+#ports-net-mgmt
+#ports-net-p2p
+#ports-news
+#ports-palm
+#ports-polish
+#ports-ports-mgmt
+#ports-portuguese
+#ports-print
+#ports-russian
+#ports-science
+ports-security
+ports-shells
+ports-sysutils
+ports-textproc
+#ports-ukrainian
+#ports-vietnamese
+ports-www
+ports-x11
+#ports-x11-clocks
+ports-x11-drivers
+ports-x11-fm
+ports-x11-fonts
+ports-x11-servers
+ports-x11-themes
+ports-x11-toolkits
+ports-x11-wm

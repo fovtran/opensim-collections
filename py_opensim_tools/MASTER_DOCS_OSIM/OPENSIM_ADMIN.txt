@@ -1,0 +1,29 @@
+"J:\xampp7\mysql\bin\mysqld.exe" --defaults-file="J:\xampp7\mysql\bin\my.ini" --standalone
+
+mysqladmin -u root shutdown
+mysqladmin -u root -h 127.0.0.1 -p password newpass
+mysql -u root -h 127.0.0.1 -p opensim
+
+$ mysql -uroot -pnewpass
+> use mysql;
+> select user,hostname from user;
+> UPDATE mysql.user SET Password=PASSWORD('foobar') WHERE USER='tom' AND Host='localhost';
+
+DROP USER 'opensim'@'localhost';
+CREATE USER 'opensim'@'localhost' IDENTIFIED BY 'diego2';
+GRANT ALL PRIVILEGES ON opensim.* TO 'opensim'@'localhost';
+SET PASSWORD FOR 'opensim'@'localhost' = PASSWORD('diego2');
+FLUSH PRIVILEGES;
+
+ALTER TABLE useraccounts DISCARD TABLESPACE ;
+ALTER TABLE useraccounts IMPORT TABLESPACE ;
+
+mysqlcheck -u root -p --auto-repair --check --all-databases
+select concat('REPAIR TABLE ', table_name, ';') from information_schema.tables where table_schema='mydatabase'; 
+mysqlcheck --all-databases -a #analyze
+mysqlcheck --all-databases -r #repair
+mysqlcheck -A --auto-repair --use-frm
+mysqlcheck --all-databases -o #optimize
+
+select UUID,accountType,passwordHash,passwordSalt,webLoginKey from auth;
+select FirstName,LastName,PrincipalID from useraccounts;

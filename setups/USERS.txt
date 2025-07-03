@@ -1,0 +1,62 @@
+https://blog.justinreeve.com/opensim-worlds/
+https://www.hypergridbusiness.com/2025/02/osgrid-wiping-its-database-on-march-21-you-have-five-weeks-to-save-your-stuff/
+https://outworldz.com/cgi/freesculpts.plx?count=318&q=
+https://aiaustin.wordpress.com/2014/07/17/enabling-the-viewer-destination-guide-for-opensim-grids/
+https://avatarlife.com/
+https://forums.openuru.org/viewtopic.php?t=346
+
+https://www.kitely.com/
+https://www.wolf-grid.com/
+
+https://github.com/M-O-S-E-S/opensim-oar-utilities
+https://github.com/RuthAndRoth/Ruth2
+https://github.com/RuthAndRoth/Roth2
+https://github.com/RuthAndRoth/Skins
+https://github.com/richardanaya/aframe-avatar/
+https://aframe.io/docs/1.6.0/introduction/models.html
+https://github.com/aframevr/aframe/
+https://aframe.io/docs/1.7.0/introduction/
+https://github.com/ManfredAabye/oswebinterface
+https://github.com/ManfredAabye/opensim-ossl-example-scripts
+https://github.com/ManfredAabye/opensimcurrencyserver-dotnet
+https://github.com/ManfredAabye/OpenSimProfile
+https://github.com/ManfredAabye/OpenSim-RemoteAdmin
+https://github.com/ManfredAabye/GLTF-Packer
+https://github.com/ManfredAabye/OpenSimSearch
+https://github.com/kcozens/OpenSimSearch
+https://github.com/ManfredAabye/opensimMULTITOOLS-II
+
+https://opensimworld.com/hop/91232
+https://maps.secondlife.com/secondlife/The%20River/103/147/2451
+
+https://www.hypergridbusiness.com/statistics/active-grids/
+http://opensimulator.org/wiki/Database_Documentation
+http://opensimulator.org/wiki/Map
+http://opensimulator.org/wiki/RemoteAdmin
+http://opensimulator.org/wiki/UserManipulation
+http://opensimulator.org/wiki/Development
+http://opensimulator.org/wiki/Configuration
+http://opensimulator.org/wiki/Known_Web_Interfaces_within_OpenSim
+http://opensimulator.org/wiki/Webinterface
+http://opensimulator.org/wiki/REST
+
+Supported Services
+## GET
+GET allows the client to retrieve all, or some sub-tree of, the inventory associated with a specified avatar's inventory. Inventory information is returned in an XML payload. This request is guaranteed not to affect the state of the avatar's inventory. Possible normal completions are:
+200 indicating normal completion of the request. The payload will contain an XML representation of the avatar's inventory.
+## PUT
+PUT allows a resource, explicitly nominated in the URI, to be created or replaced. I.e. the URI identifies an instance rather than a context. Possible normal completions are
+200 if the nominated resource was successfully updated
+201 if the nominated resource was successfully created.
+204 if no content change (but the resource was recognized and valid)
+
+## POST
+POST allows a new resource to be created in the context identified by the URI. It follows from this that the resource identified by a POST request should always be a folder. Normal completions are:
+200 if some portion of the context was modified.
+201 if the new data was entirely new.
+
+## DELETE
+DELETE allows a named resource to be deleted. If the resource is a folder, then the entire sub-tree will be removed. Normal completion codes are:
+200 if the specified resource was deleted.
+Both PUT and POST allow any assets upon which the inventory catalog depends, to be included in-line with the XML catalog data.
+

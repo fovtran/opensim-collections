@@ -1,0 +1,51 @@
+<project name="MyPetBot" default="build" basedir=".">
+  <description>WakaTeka</description>
+  <property name="debug" value="true" overwrite="false" />
+  <property name="OpenSim.dir" value="C:\Users\ALICIA\Desktop\STORE3A\OPENSIM_NEW\SERVERS\opensim-0.9.1.1\bin" />
+  <property name="dir.dir" value="./bin" />
+  <target name="prepare" description="Remover todos los archivos generados">
+		<mkdir dir=".\bin"/>
+		<copy overwrite="false" file="${OpenSim.dir}\OpenMetaverse.dll" todir="." />
+		<copy overwrite="false" file="${OpenSim.dir}\OpenMetaverseTypes.dll" todir="." />
+		<copy overwrite="false" file="${OpenSim.dir}\OpenMetaverse.StructuredData.dll" todir="." />
+		<copy overwrite="false" file="${OpenSim.dir}\XMLRPC.dll" todir="." />
+		<copy overwrite="false" file="${OpenSim.dir}\log4net.dll" todir="." />
+		<copy overwrite="false" file="${OpenSim.dir}\SmartThreadPool.dll" todir="." />
+	</target>
+  <target name="clean" description="Remover todos los archivos generados">
+    <delete file="${OpenSim.dir}\MyPetBot.exe" failonerror="false" />
+    <delete file="MyPetBot.pdb" failonerror="false" />
+	<delete file="OpenMetaverse.dll" failonerror="false" />
+	<delete file="OpenMetaverse.StructuredData.dll" failonerror="false" />
+	<delete file="OpenMetaverseTypes.dll" failonerror="false" />
+	<delete file="XMLRPC.dll" failonerror="false" />
+	<delete file="log4net.dll" failonerror="false" />
+	<delete file="SmartThreadPool.dll" failonerror="false" />
+  </target>
+  <target name="build" description="Remover todos los archivos generados">
+		<csc target="exe" output="${OpenSim.dir}\MyPetBot.exe" debug="false">
+		<sources><include name="**/*.cs" /></sources>
+
+      <resources dynamicprefix="false" prefix="MyPetBot" />
+      <references>	  
+	  <include frompath="true" name="${OpenSim.dir}\log4net.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenMetaverse.Rendering.Meshmerizer.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenMetaverse.StructuredData.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Framework.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Framework.Console.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Framework.Monitoring.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Framework.Servers.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Region.Framework.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Region.Coremodules.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Region.OptionalModules.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Services.Interfaces.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Services.AvatarService.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Services.MapImageService.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Services.PresenceService.dll" />
+	  <include frompath="true" name="${OpenSim.dir}\OpenSim.Services.SimulationService.dll" />
+	  <include frompath="false" name="${OpenSim.dir}\OpenMetaverse.dll" />
+	  <include frompath="false" name="${OpenSim.dir}\OpenMetaverseTypes.dll" />
+      </references>
+    </csc>
+  </target>
+</project>

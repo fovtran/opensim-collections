@@ -1,0 +1,23 @@
+
+# simian grid frontend
+http://metaverseink.com/cgi-bin/register.py n
+
+
+${diva}/bin/config-include/DivaPreferences.ini:;; Instead, override variables in MyWorld.ini
+${diva}/bin/config-include/DivaPreferences.ini:    Include-Common = "config-include/MyWorld.ini"
+
+$ bash
+$ cd /j/diva-r09000
+$ find ./ -name *.ini -exec cat {} +
+
+export diva=diva-r09110 && \
+    find /j/${diva}/ -type d \( -path "/j/${diva}/bin/Regions" \) -prune -o -name "*.ini" \
+    -exec grep -oP '(?<=\[).*(?=\])' {} + | awk -F/ '{print $NF}'
+
+./bin/config-include/DivaPreferences.ini
+./bin/config-include/MyWorld.ini
+./bin/OpenSim.ini
+./bin/OpenSimDefaults.ini
+./bin/Wifi.ini
+
+./bin/Regions/*.ini

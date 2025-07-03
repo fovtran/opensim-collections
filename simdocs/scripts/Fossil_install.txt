@@ -1,0 +1,10 @@
+#!/bin/sh
+export version=20120808112557
+export src=http://www.fossil-scm.org/download/
+export file=fossil-src-${version}.tar.gz
+export package=${src}/${file}
+wget -c ${package}
+tar xvfz ${file}
+cd `echo ${file} | awk '$1 ~ /.tar.gz/ {sub(/.tar.gz/,"");print };'`
+./configure
+make

@@ -1,0 +1,56 @@
+create region [name] [filename] - Create a new region
+change region <region name>
+region restart abort [<message>] - Abort a scheduled region restart, with an optional message
+region restart bluebox <message> <delta seconds>+ 
+region restart notice <message> <delta seconds>+ 
+remove-region - remove a region from the simulator
+
+monitor report
+
+set region flags <Region name> <flags> - Set database flags for region
+set terrain heights <corner> <min> <max> [<x>] [<y>] - Sets the terrain texture heights on corner #<corner> to <min>/<max>, if <x> or <y> are specified, it will only set it on regions with a matching coordinate. Specify -1 in <x> or <y> to wildcard that coordinate. Corner # SW = 0, NW = 1, SE = 2, NE = 3.
+set terrain texture <number> <uuid> [<x>] [<y>] 
+
+show neighbours - Shows the local regions' neighbours
+show circuits
+show connections
+show pending-objects - show number of objects in the pending queues of all viewers
+show ratings - Show rating data
+show region [region name] - Show region data (Region Name, Region UUID, Location, URI, Owner ID, Flags)
+show regions - Show regions data (Region Names, XLocation YLocation coordinates, Region Ports, Estate Names)
+
+show stats - show usefull statistical information for this server. See Frame Statistics Values below for more information.
+show threads - shows the persistent threads registered with the system. Does not include threadpool threads.
+
+load iar <first> <last> <inventory path> <password> [<archive path>] - Load user inventory archive. See Inventory Archives.
+load oar [filename] - load an OpenSimulator archive. This entirely replaces the current region. Default filename is region.oar. See OpenSim Archives.
+load xml [-newIDs [<x> <y> <z>]] - Load a region's data from XML format (0.7.*: DEPRECATED and may be REMOVED soon. Use "load xml2" instead)
+those xml are the result of the export save or *export save-all
+load xml2 [filename] - optional parameters not supported for XML2 format as at 1-Jul-2008
+save iar <first> <last> <inventory path> <password> [<archive path>] - Save user inventory archive. See Inventory Archives
+save oar [filename] - save the current region to an OpenSimulator archive. Default filename is region.oar. See OpenSim Archives.
+save prims xml2 [<prim name> <file name>] - Save named prim to XML2
+save xml [filename] - save prims to XML
+save xml2 [filename] - save prims to XML (Format 2 - rearrangement of some nodes, to make loading/saving easier)
+
+config get [<section>] [<key>] - Get the current configuration, either for a particular key, a particular section or the whole config.
+config save <path> - Save the current configuration to a file.
+config set <section> <key> - Set a particular configuration value. On the whole, this is useless since neither OpenSimulator nor modules dynamically reload config values.
+config show [<section>] [<key>] - Synonym for 'config get'
+
+
+Region (root) # show regions
+Name                  ID                                    Position     Size         Port   Ready?  Estate
+Luminal               634ed6e1-4491-4ddd-a20f-e9f960f6bf89  1500,1500    512x512      9000   Yes     Luminal
+Requiem               4d2aa8db-4b9f-4fb6-a679-8fbe7f611e9a  1502,1500    512x512      9001   Yes     Luminal
+Spiral                72ca1508-48e0-4c16-a1d9-827be9e92a13  1500,1498    512x512      9003   Yes     Luminal
+Spiral2               f59c7f24-0574-4500-b4a6-3d172b65c9a6  1500,1502    256x256      9004   Yes     Luminal
+Vax                   edba5fa6-2625-4c9a-a6c3-52a9eb71ec97  1498,1500    512x512      9002   Yes     Luminal
+
+Name                  ID                                    Position     Size         Flags
+Requiem               4d2aa8db-4b9f-4fb6-a679-8fbe7f611e9a  1502,1500    512x512      RegionOnline
+Luminal               634ed6e1-4491-4ddd-a20f-e9f960f6bf89  1500,1500    512x512      DefaultRegion, FallbackRegion, RegionOnline, DefaultHGRegion
+Spiral                72ca1508-48e0-4c16-a1d9-827be9e92a13  1500,1498    512x512      RegionOnline
+Vax                   edba5fa6-2625-4c9a-a6c3-52a9eb71ec97  1498,1500    512x512      RegionOnline
+Spiral2               f59c7f24-0574-4500-b4a6-3d172b65c9a6  1500,1502    256x256      RegionOnline
+

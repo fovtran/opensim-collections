@@ -1,0 +1,281 @@
+General Server Commands
+
+These commands are available in both simulator and robust consoles.
+General
+
+command-script [scriptfile] - Runs a command script containing console commands.
+quit - shutdown the server.
+show info - show server information (version and startup path). Before OpenSimulator 0.7.5 this is only available on the simulator console.
+show uptime - show server startup time and uptime. Before OpenSimulator 0.7.5 this is only available on the simulator console.
+show version - show server version. Before OpenSimulator 0.7.5 this is only available on the simulator console.
+shutdown - synonym for quit
+get log level - In OpenSimulator 0.7.5 and later, print the current console logging level. In OpenSimulator 0.7.4 and earlier please use the "set log level" command instead without a level parameter.
+set log level [level] - change the console logging level only. For example, off or debug. See Logging for more information. In OpenSimulator 0.7.4 and earlier, if called without the level argument prints the current level. In OpenSimulator 0.7.5 and later please use the "get log level" command instead. Only available on ROBUST console from OpenSimulator 0.7.5.
+Debug
+debug http [<level>] - Turn on/off extra logging for HTTP request debugging. Only available on robust console from commit 94517c8 (dev code post 0.7.3.1). In current development code (for OpenSimulator 0.7.5) this is debug http in|out|all [<level>] since outbound HTTP messages can also now be logged (this was only possible for inbound before).
+
+Simulator Commands
+General
+
+change region <region name> - subsequent commands apply only to the specified region. If region name is "root" then all regions are selected
+create region [name] [filename] - Create a new region
+debug packet <level> - Turn on packet debugging, where OpenSimulator prints out summaries of incoming and outgoing packets for viewers, depending on the level set
+debug scene - Turn on scene debugging
+delete-region <name> - Delete a region from disk
+emergency-monitoring - turn emergency debugging monitoring mode on or off.
+export-map [<path>] - Save an image of the world map (default name is exportmap.jpg)
+help [<command>] - Get general command list or more detailed help on a specific command or set of commands
+link-mapping - Set a local grid co-ordinate to link to a remote hypergrid
+link-region - Link a HyperGrid region. Not sure how this differs from link-mapping
+modules list - List modules
+modules load <name> - Load a module
+modules unload <name> - Unload a module
+monitor report - Returns a variety of statistics about the current region and/or simulator
+region restart abort [<message>] - Abort a scheduled region restart, with an optional message
+region restart bluebox <message> <delta seconds>+ - Schedule a region restart. If one delta is given then the region is restarted in delta seconds time. A time to restart is sent to users in the region as a dismissable bluebox notice. If multiple deltas are given then a notice is sent when we reach each delta.
+region restart notice <message> <delta seconds>+ - Schedule a region restart. Same as above except showing a transient notice instead of a dismissable bluebox.
+reload estate - reload estate data
+remove-region - remove a region from the simulator
+restart - Restarts all sims in this instance
+set region flags <Region name> <flags> - Set database flags for region
+set terrain heights <corner> <min> <max> [<x>] [<y>] - Sets the terrain texture heights on corner #<corner> to <min>/<max>, if <x> or <y> are specified, it will only set it on regions with a matching coordinate. Specify -1 in <x> or <y> to wildcard that coordinate. Corner # SW = 0, NW = 1, SE = 2, NE = 3.
+set terrain texture <number> <uuid> [<x>] [<y>] - Sets the terrain <number> to <uuid>, if <x> or <y> are specified, it will only set it on regions with a matching coordinate. Specify -1 in <x> or <y> to wildcard that coordinate.
+show caps - show all registered capabilities URLs
+NOTE: In OpenSimulator 0.7.1, "show capabilities" is shown as a result for help command, but actually only "show caps" will be accepted. (#5467)
+show circuits - Show agent circuit data
+show connections - show connections data
+show http-handlers - show all registered http handlers
+show hyperlinks - list hg regions
+show modules - show module data
+show neighbours - Shows the local regions' neighbours
+show pending-objects - show number of objects in the pending queues of all viewers
+show pqueues [full] - show priority queue data for each client. Without the 'full' option, only root agents are shown. With the 'full' option child agents are also shown.
+show queues - Show queue data for agent connections.
+show ratings - Show rating data
+show region [region name] - Show region data (Region Name, Region UUID, Location, URI, Owner ID, Flags)
+show regions - Show regions data (Region Names, XLocation YLocation coordinates, Region Ports, Estate Names)
+show stats - show usefull statistical information for this server. See Frame Statistics Values below for more information.
+show threads - shows the persistent threads registered with the system. Does not include threadpool threads.
+show throttles [full] - Show throttle data for each client connection, and the maximum allowed for each connection by the server. Without the 'full' option, only root agents are shown. With the 'full' option child agents are also shown.
+unlink-region <local name> - unlink a hypergrid region
+Appearance Commands
+appearance show - Show information about avatar appearance. Currently just checks whether the baked texture is "OK" or "corrupt". Still in development. Only exists in development code at the moment.
+Archive Commands
+load iar <first> <last> <inventory path> <password> [<archive path>] - Load user inventory archive. See Inventory Archives.
+load oar [filename] - load an OpenSimulator archive. This entirely replaces the current region. Default filename is region.oar. See OpenSim Archives.
+load xml [-newIDs [<x> <y> <z>]] - Load a region's data from XML format (0.7.*: DEPRECATED and may be REMOVED soon. Use "load xml2" instead)
+those xml are the result of the export save or *export save-all
+load xml2 [filename] - optional parameters not supported for XML2 format as at 1-Jul-2008
+save iar <first> <last> <inventory path> <password> [<archive path>] - Save user inventory archive. See Inventory Archives
+save oar [filename] - save the current region to an OpenSimulator archive. Default filename is region.oar. See OpenSim Archives.
+save prims xml2 [<prim name> <file name>] - Save named prim to XML2
+save xml [filename] - save prims to XML
+save xml2 [filename] - save prims to XML (Format 2 - rearrangement of some nodes, to make loading/saving easier)
+Asset Commands
+The fcache commands only currently appearance if you are using the fcache asset cache. This is the default on OpenSimulator.
+fcache assets - Attempt a deep scan and cache of all assets in all scenes
+fcache clear [file] [memory] - Remove all assets in the cache. If file or memory is specified then only this cache is cleared.
+fcache expire <datetime> - Purge cached assets older then the specified date/time
+fcache status - Display cache status
+j2k decode <ID> - Do JPEG2000 decoding of an asset.
+Config Commands
+config get [<section>] [<key>] - Get the current configuration, either for a particular key, a particular section or the whole config.
+config save <path> - Save the current configuration to a file.
+config set <section> <key> - Set a particular configuration value. On the whole, this is useless since neither OpenSimulator nor modules dynamically reload config values.
+config show [<section>] [<key>] - Synonym for 'config get'
+Land Commands
+land show - Shows all parcels on the current region.
+Object Commands
+backup - Persist currently unsaved object changes immediately instead of waiting for the normal persistence call. This shouldn't normally be required - the simulator persists region objects automatically at regular intervals and on shutdown.
+delete object creator <UUID> - Delete a scene object by creator
+delete object name [--regex] <name> - Delete a scene object by name.
+delete object outside - Delete all scene objects outside region boundaries. This is currently if z < 0 or z > 10000. Object outside these bounds have been known to cause issues with OpenSimulator's use of some physics engines (such as the Open Dynamics Engine).
+delete object owner <UUID> - Delete a scene object by owner
+delete object uuid <UUID> - Delete a scene object by uuid. In current dev code (post 0.7.5) this is "show object id" and also allows a local ID.
+dump object id <UUID-or-localID> - Dump the serialization of the given object to a file for debug purposes.
+edit scale <name> <x> <y> <z> - Change the scale of a named prim
+force update - Force the region to send all clients updates about all objects.
+show object name [--regex] <name> - Show details of scene objects with the given name.
+show object uuid <UUID> - Show details of a scene object with the given UUID. In current dev code (post 0.7.5) this is "show object id" and also allows a local ID.
+show part name [--regex] <name> - Show details of scene object parts with the given name.
+show part uuid <UUID> - Show details of a scene object parts with the given UUID. In current dev code (post 0.7.5) this is "show object id" and also allows a local ID.
+
+Script Commands
+These currently only exist in git master OpenSimulator development code post the 0.7.2 release.
+
+scripts resume [<script-item-uuid>] - Resumes all suspended scripts
+scripts show [<script-item-uuid>] - Show script information. <script-item-uuid> option only exists from git master 82f0e19 (2012-01-14) onwards (post OpenSimulator 0.7.2).
+scripts start [<script-item-uuid>] - Starts all stopped scripts
+scripts stop [<script-item-uuid>] - Stops all running scripts
+scripts suspend [<script-item-uuid>] - Suspends all running scripts
+
+Terrain Commands
+Note that some of these may require a sim restart to show properly.
+
+terrain load - Loads a terrain from a specified file.
+terrain load-tile - Loads a terrain from a section of a larger file.
+terrain save - Saves the current heightmap to a specified file.
+terrain fill - Fills the current heightmap with a specified value.
+terrain elevate - Raises the current heightmap by the specified amount.
+terrain lower - Lowers the current heightmap by the specified amount.
+terrain multiply - Multiplies the heightmap by the value specified.
+terrain bake - Saves the current terrain into the regions revert map.
+terrain revert - Loads the revert map terrain into the regions heightmap.
+terrain newbrushes - Enables experimental brushes which replace the standard terrain brushes. WARNING: This is a debug setting and may be removed at any time.
+terrain stats - Shows some information about the regions heightmap for debugging purposes.
+terrain effect - Runs a specified plugin effect
+
+Tree Commands
+tree active - Change activity state for the trees module
+tree freeze - Freeze/Unfreeze activity for a defined copse
+tree load - Load a copse definition from an xml file
+tree plant - Start the planting on a copse
+tree rate - Reset the tree update rate (mSec)
+tree reload - Reload copse definitions from the in-scene trees
+tree remove - Remove a copse definition and all its in-scene trees
+tree statistics - Log statistics about the trees
+
+User Commands
+alert <message> - send an in-world alert to everyone
+alert-user <first> <last> <message> - send an an in-world alert to a specific user
+bypass permissions <true / false> - Bypass in-world permission checks
+debug permissions - Turn on permissions debugging
+force permissions - Force permissions on or off.
+kick user <first> <last> [message]: - Kick a user off the simulator
+login disable - Disable user entry to this simulator
+login enable - Enable user entry to this simulator
+login status - Show whether logins to this simulator are enabled or disabled
+show users [full]- show info about currently connected users to this region. Without the 'full' option, only users actually on the region are shown. With the 'full' option child agents of users in neighbouring regions are also shown.
+teleport user <destination> - Teleport a user on this simulator to a specific destination. Currently only in OpenSimulator development code after the 0.7.3.1 release (commit bf0b817).
+Windlight/LightShare Commands
+windlight load - Load windlight profile from the database and broadcast
+windlight enable - Enable the windlight plugin
+windlight disable - Enable the windlight plugin
+
+ROBUST Service Commands
+These can also be accessed on the simulator command console itself in standalone mode.
+
+Asset Service
+delete asset - Delete an asset from the database. Doesn't appear to be implemented.
+dump asset <ID> - Dump an asset to the filesystem. OpenSimulator 0.7.3 onwards.
+show digest <ID> - Show summary information about an asset. From OpenSimulator 0.7.3 onwards this will be renamed to "show asset"
+Grid Service
+set region flags <Region name> <flags> - Set database flags for region
+show region <Region name> - Show the details of a given region. This command is renamed to "show region name" in development versions of OpenSimulator.
+The following commands currently only exist in development versions of OpenSimulator (post 0.7.3.1). These are currently found in the "Regions" help section.
+deregister region id <Region UUID> - Deregister a region manually. This can be helpful if a region was not properly removed due to bad simulator shutdown and the simulator has not since been restarted or its region configuration has been changed.
+show region at <x-coord> <y-coord> - Show details on a region at the given co-ordinate.
+show region name <Region name> - Show details on a region
+show regions - Show details on all regions. In standalone mode this version of the command is not currently available - the simulator version of "show regions" is used instead, which shows similar information.
+
+User Service
+create user [first] [last] [passw] [RegionX] [RegionY] [Email] - creates a new user and password
+or just: create user - and server prompts for all data
+Note for use of create user in standalone mode: use the user default coordinates
+of 1000,1000 for Start Region X and Y position otherwise server
+gives error of "[LOGIN]: Not found region"
+reset user password - reset a user's password.
+show account <firstname> <lastname> - show account details for the given user name (0.7.2-dev)
+Login Service
+login level <value> - Set the miminim userlevel allowed to login.
+login reset - reset the login level to its default value.
+login text <text to print during the login>
+set user level <firstname> <lastname> <level> - Set UserLevel for the user, which determines whether a user has a god account or can login at all (0.7.2-dev)
+
+Details of Terrain Module Commands
+terrain load
+Loads a terrain from a specified file.
+Parameters
+filename (String)
+The file you wish to load from, the file extension determines the loader to be used. Supported extensions include: .r32 (RAW32) .f32 (RAW32) .ter (Terragen) .raw (LL/SL RAW) .jpg (JPEG) .jpeg (JPEG) .bmp (BMP) .png (PNG) .gif (GIF) .tif (TIFF) .tiff (TIFF)
+terrain load-tile
+Loads a terrain from a section of a larger file.
+Parameters
+filename (String)
+The file you wish to load from, the file extension determines the loader to be used. Supported extensions include: .r32 (RAW32) .f32 (RAW32) .ter (Terragen) .raw (LL/SL RAW) .jpg (JPEG) .jpeg (JPEG) .bmp (BMP) .png (PNG) .gif (GIF) .tif (TIFF) .tiff (TIFF)
+file width (Integer)
+The width of the file in tiles
+file height (Integer)
+The height of the file in tiles
+minimum X tile (Integer)
+The X region coordinate of the first section on the file
+minimum Y tile (Integer)
+The Y region coordinate of the first section on the file
+terrain save
+Saves the current heightmap to a specified file.
+Parameters
+filename (String)
+The destination filename for your heightmap, the file extension determines the format to save in. Supported extensions include: .r32 (RAW32) .f32 (RAW32) .ter (Terragen) .raw (LL/SL RAW) .jpg (JPEG) .jpeg (JPEG) .bmp (BMP) .png (PNG) .gif (GIF) .tif (TIFF) .tiff (TIFF)
+terrain fill
+Fills the current heightmap with a specified value.
+Parameters
+value (Double)
+The numeric value of the height you wish to set your region to.
+terrain elevate
+Raises the current heightmap by the specified amount.
+Parameters
+amount (Double)
+terrain lower
+Lowers the current heightmap by the specified amount.
+Parameters
+amount (Double)
+The amount of height to remove from the terrain in meters.
+terrain multiply
+Multiplies the heightmap by the value specified.
+Parameters
+value (Double)
+The value to multiply the heightmap by.
+terrain bake
+Saves the current terrain into the regions revert map.
+terrain revert
+Loads the revert map terrain into the regions heightmap.
+terrain newbrushes
+Enables experimental brushes which replace the standard terrain brushes. WARNING: This is a debug setting and may be removed at any time.
+Parameters
+Enabled? (Boolean)
+true / false - Enable new brushes
+terrain stats
+Shows some information about the regions heightmap for debugging purposes.
+terrain effect
+Runs a specified plugin effect
+Parameters
+name (String)
+The plugin effect you wish to run, or 'list' to see all plugins
+Details of Hypergrid Commands
+
+For full details and explanations of Hypergrid Commands, see the Linking Regions sections of the Installing and Running Hypergrid page.
+show hyperlinks
+This command will show a list of all hypergrid linked regions.
+link-region <Xloc> <Yloc> <host> <port> <location-name>
+Use Xloc and Yloc that make sense to your world, i.e. close to your regions, but not adjacent.
+replace osl2.nac.uci.edu and 9006 with the domain name / ip address and the port of the region you want to link to
+E.g. link-region 8998 8998 osl2.nac.uci.edu 9006 OSGrid Gateway
+unlink-region <local region name>
+This command will unlink the specified hypergrid linked region - be sure to use the exact local name as reported by the "show hyperlinks" command.
+Important Note
+Due to a viewer bug, you can only TP between regions that are no more than 4096 cells apart in any dimension. What this means in practice is that if you want to link to OSGrid, you must have your own regions reachable from the (10,000; 10,000) point on the map, which is where OSGrid is centered. Place your regions somewhere in the 8,000s or the 12,000s.
+link-mapping
+Frame Statistics Values
+
+The labels of the Frame Statistics values shown by the console command "show stats" are a bit cryptic. Here is a list of the meanings of these values:
+Dilatn - time dilation
+SimFPS - sim FPS
+PhyFPS - physics FPS
+AgntUp - # of agent updates
+RootAg - # of root agents
+ChldAg - # of child agents
+Prims - # of total prims
+AtvPrm - # of active prims
+AtvScr - # of active scripts
+ScrLPS - # of script lines per second
+PktsIn - # of in packets per second
+PktOut - # of out packets per second
+PendDl - # of pending downloads
+PendUl - # of pending uploads
+UnackB - # of unacknowledged bytes
+TotlFt - total frame time
+NetFt - net frame time
+PhysFt - physics frame time
+OthrFt - other frame time
+AgntFt - agent frame time
+ImgsFt - image frame time

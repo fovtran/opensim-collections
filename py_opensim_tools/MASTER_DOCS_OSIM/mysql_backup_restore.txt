@@ -1,0 +1,14 @@
+
+# Backup full table
+mysql -uroot -pnewpass --opt opensim </opensim.sql
+mysql -uroot -pnewpass </opensim.sql
+
+# Backup quick table
+mysqldump -uroot -pnewpass -r D:\OpensimBackup.sql opensim
+
+# Restore table
+> CREATE DATABASE opensim;
+> DROP DATABASE IF EXISTS opensim;
+$ mysql -U -uroot -pnewpass opensim < d:\OpensimBackup.sql
+
+move %HOMEPATH%\My Documents\OpenSimBackups\OpensimBackup.sql %HOMEPATH%\My Documents\OpenSimBackups\OpensimBackup%DATE%_%TIME%.sql

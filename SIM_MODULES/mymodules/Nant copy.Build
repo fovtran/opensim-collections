@@ -1,0 +1,47 @@
+<project name="MyPetBot" default="build" basedir=".">
+  <description>WakaTeka</description>
+  <property name="debug" value="true" overwrite="false" />
+  <property name="OpenSim.dir" value="C:\Users\ALICIA\Desktop\STORE3A\OPENSIM_NEW\SERVERS\opensim-0.9.1.1\bin" />
+  <property name="dir.dir" value="./bin" />
+	<mkdir dir=".\bin"/>
+
+  <target name="clean" description="Remover todos los archivos generados">
+    <delete file="MyPetBot.exe" failonerror="false" />
+    <delete file="MyPetBot.pdb" failonerror="false" />
+  </target>
+  <target name="build" description="Remover todos los archivos generados">
+    <csc target="exe" output="MyPetBot.exe" debug="false">
+      <nowarn>
+        <warning number="0519" />
+      </nowarn>
+      <sources>
+        <include name="**/*.cs" />
+      </sources>
+      <resources dynamicprefix="false" prefix="MyPetBot" />
+      <references>
+	  <include name="System.dll" />
+	  <include name="System.Core.dll" />
+	  <include name="System.Data.dll" />
+	  <include name="${OpenSim.dir}\log4net.dll" />
+	  <include name="${OpenSim.dir}\NiNi.dll" />
+	  <include name="${OpenSim.dir}\Mono.Addins.dll" />
+	  <include name="${OpenSim.dir}\OpenMetaverse.dll" />
+	  <include name="OpenMetaverseTypes.dll" />
+	  <include name="${OpenSim.dir}\OpenMetaverse.Rendering.Meshmerizer.dll" />
+	  <include name="${OpenSim.dir}\OpenMetaverse.StructuredData.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Framework.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Framework.Console.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Framework.Monitoring.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Framework.Servers.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Region.Framework.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Region.Coremodules.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Region.OptionalModules.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Services.Interfaces.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Services.AvatarService.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Services.MapImageService.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Services.PresenceService.dll" />
+	  <include name="${OpenSim.dir}\OpenSim.Services.SimulationService.dll" />
+      </references>
+    </csc>
+  </target>
+</project>

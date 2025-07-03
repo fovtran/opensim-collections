@@ -1,0 +1,119 @@
+@echo off
+:: FILENAME: FullBackup.bat
+:: AUTHOR: WhiteStar Magic @ OSGrid
+:: DATE: REVISED Nov-24-2010
+::
+:: Operational Under Windows Vista SP1 TO Win Server 2008 R1 (64bit)
+:: Suitable under other Windows Platforms, but not tested
+::
+:: Added MySql Functions 
+:: Added Further Commenting to better explain what is being done
+:: Added Additional Folder Backups (Exports complete)
+:: Added INI & TXT File Backups as well, Accounting for Murphys Laws, (you never know)
+:: Revised MAY.14.2009
+:: Correction added for TimeStamp to remove leading space from time IF time is < 12:00 (Operating System Quirk)
+:: 
+:: Robocopy.exe can be downloaded from Microsoft Corp/MSDN Website. Search for it and get the latest version.
+:: XP & Vista Users ! It works fine as long as you have the latest.
+:: ROBOCOPY COMMANDS AS USED
+:: SourceFolder TargetFolder FileName /S = DoSubFolders (non-empty) /LOG = Generate LOG of execution
+:: 
+:: Place this batch file into Microsoft Scheduler, set to daily
+:: Other scheduler systems can also be used if desired
+:: =====================================================================================
+::
+:: CONFIGURING ENVIRONMENT PATHS AND SETUP TO SIMPLIFY CONFIG & ADMIN
+:: Adjust the following to YOUR INSTALLED Folder Paths
+:: 
+:: OSbackup = Where you want your Backup File Structure to be and send files to
+:: OSbinSrc = Where the OpenSimulator Software is installed and run from
+:: 
+SET OSbackup=C:\OPENSIM\InstanceA\BACKups
+SET OSbinSrc=C:\OPENSIM\InstanceA\bin
+::
+:: MYSQL INFORMATION TO BE FILLED OUT. IF DBUSER = XXX MySql Dump will not occur
+set DBUSER=root
+set DBPW=YOURPASSWORD
+set DBNAME=opensim
+::
+:: --------------------------------------------------------------------------------------
+:: DATE & TIME String Assembly
+:: --------------------------------------------------------------------------------------
+:: Date & Time Format on your system
+:: Check your format in command.prompt with DATE/T
+::
+:: EU DATE FORMAT = 15-05-2006 DD-MM-YYYY
+:: US DATE FORMAT = 05/17/2006 MM/DD/YYYY
+:: TIME FORMAT 13:45:55 is truncated to 13-45 and colons are removed 
+:: DATES are cleaned of / or - or : depending on your system install & config.
+::
+:: Parse Hour & Minutes Removing incorrect characters or leading spaces
+:: i=HR, j=min, k=sec,l=msec
+for /F "usebackq tokens=1,2,3,4 delims=/-:. " %%i in ('%TIME%') do set Ttime=%%i-%%j
+::
+:: Parse the Date String removing unwated characters / or - or 'space' depends on system installation
+for /F "usebackq tokens=1,2,3,4 delims=/-: " %%i in ('%DATE%') do set Tdate=%%i-%%j-%%k
+:: 
+set TimeStamp=%Tdate%@%Ttime%
+:: we now have a string which will appear as 24-11-2010@23-27
+::
+:: --------------------------------------------------------------------------------------
+:: Backup the MySQL DB from Live System
+:: OpenSimulator Database Backup Section
+:: --------------------------------------------------------------------------------------
+:: for more information on commands used: 
+:: Open a command shell (DOS Prompt / Console Session)
+:: Go to the MySql Installation Folder
+:: NOTE that the output can be reditected into a TXT file so that you can read it in a Text Editor
+:: Type the Following commands for information at the command prompt
+:: mysqldump -?
+:: mysqlshow -?
+:: to redirect out to TXT file do as shown:
+:: mysqldump -? > %OSbackup%\MySqlDump_Commands.txt
+:: mysqlshow -? > %OSbackup%\MySqlShow_Commands.txt
+:: !!! Target Folder must exist. Adjust Paths according to YOUR installation !!!
+:: -------------------------------------------------------------------------------------------------
+:: make folder if not exist
+if not exist %OSbackup%\DBsql\*.* md %OSbackup%\DBsql
+::
+:: generate MySql DB Backup
+if DBUSER NEQ XXX mysqldump --opt -u%DBUSER% -p%DBPW% %DBNAME% > %OSbackup%\DBsql\%DBNAME%_%TIMESTAMP%.sql
+:: 
+:: Dump the opensim table struct info for a snapshot of the stats 
+if DBUSER NEQ XXX mysqlshow -v -v -u%DBUSER% -p%DBPW% %DBNAME% > %OSbackup%\DBsql\OS_db_STATS.txt
+::
+:: =========================
+:: END OF MySql DB Backup Section
+:: =========================
+:: 
+:: OPENSIM SYSTEM DATA BACKUP SECTION
+:: ------------------------------------------------------------------------------------
+cd %OSbackup%
+:: 
+:: if the folders do not exist, create them
+:: 
+if not exist %OSbackup%\DB\*.* md %OSbackup%\DB
+if not exist %OSbackup%\INI\*.* md %OSbackup%\INI
+if not exist %OSbackup%\EXPORTS\*.* md %OSbackup%\EXPORTS
+if not exist %OSbackup%\LOGS\*.* md %OSbackup%\LOGS
+if not exist %OSbackup%\OAR\*.* md %OSbackup%\OAR
+if not exist %OSbackup%\REGIONS\*.* md %OSbackup%\REGIONS
+if not exist %OSbackup%\TERRAINS\*.* md %OSbackup%\TERRAINS
+if not exist %OSbackup%\TXT\*.* md %OSbackup%\TXT
+if not exist %OSbackup%\XML2\*.* md %OSbackup%\XML2
+:: -- COPY THE FILES OVER -- 
+robocopy %OSbinSrc% %OSbackup%\DB *.DB /S /LOG:%OSbackup%\DBlog.txt
+robocopy %OSbinSrc%\Exports %OSbackup%\EXPORTS *.* /S /LOG:%OSbackup%\EXPORTSlog.txt
+robocopy %OSbinSrc% %OSbackup%\INI *.ini /S /LOG:%OSbackup%\INIlog.txt
+robocopy %OSbinSrc% %OSbackup%\LOGS *.log /LOG:%OSbackup%\LOGSlog.txt
+robocopy %OSbinSrc%\Regions %OSbackup%\REGIONS *.* /S /LOG:%OSbackup%\REGIONSlog.txt
+robocopy %OSbinSrc% %OSbackup%\TXT *.txt /S /LOG:%OSbackup%\INIlog.txt
+robocopy %OSbinSrc% %OSbackup%\OAR *.oar /S /LOG:%OSbackup%\OARlog.txt
+robocopy %OSbinSrc% %OSbackup%\TERRAINS *.r32 /S /LOG:%OSbackup%\TERRAINSlog.txt
+:: 
+cd %OSbackup%\LOGS
+:: uncomment according to Operating System. opensim.log = 32bit OS, opensim.32BitLaunch.log = 64bit operating
+RENAME opensim.log OSLOG_(%TimeStamp%).log
+::RENAME OpenSim.32BitLaunch.log OSLOG_(%TimeStamp%).log
+:: 
+:END

@@ -1,0 +1,74 @@
+mysql -uroot -pnewpass -h 127.0.0.1 -p opensim
+
+show databases;
+show tables;
+use X;
+
+SELECT regionName as 'Regions' FROM opensim.regions;
+SELECT Name,Description FROM opensim.land;
+SELECT RegionUUID from land;
+SELECT Token from regions A LEFT JOIN land B on A.uuid=B.RegionUUID;
+SELECT RegionUUID,water_height,Sandbox from regionsettings;
+SELECT RegionUUID from terrain;
+SELECT RegionID,EstateID from estate_map;
+
+show columns from land;
+show columns from regions;
+
+select MediaURL,MusicURL,MediaType,MediaDescription,MediaLoop from land;
+select UUID,RegionUUID,LocalLandID,Bitmap,Name,Description,OwnerUUID,Area,Category,ClaimPrice,GroupUUID,LandStatus,LandFlags,PassHours,PassPrice,SnapshotUUID from land;
+select RegionUUID,Bitmap,Name,SnapshotUUID from land;
+
+SET @bcpCommand = 'bcp "SELECT blobcolumn FROM blobtable WHERE ID = ' + CAST(@FileID AS VARCHAR(20)) + '" queryout "' + @FileName + '" -T -c'
+EXEC master..xp_cmdshell @bcpCommand
+
+select icon from filetype WHERE extension = 'PDF'" > /tmp/imagen.png
+
+SELECT PrincipalID,Name,Value from avatars;
+SELECT creatoruuid,name,description,parcelname from classifieds;
+SELECT Name,Text,UUID,RegionUUID from prims where Name!="Primitive";
+SELECT Name,Text,UUID,RegionUUID,PositionX,PositionY,PositionZ from prims where Name!="Primitive";
+SELECT Name,UUID,PositionX,PositionY,PositionZ from prims where Name!="Primitive";
+select name,assetType,invType,description,currentPermissions,flags,itemID,primID,assetID,CreatorID from primitems LIMIT 100;
+select name,description,itemID,primID,assetID from primitems LIMIT 10;
+select inventoryName,inventoryDescription,assetID,assetType,creatorID,salePrice,avatarID from inventoryitems LIMIT 10
+select name,description,local,temporary,id,CreatorID from assets LIMIT 10;
+select folderName,type,version,folderID,parentFolderID from inventoryfolders;
+select folderName,type,version,folderID,parentFolderID from inventoryfolders group by parentFolderID;
+
+select UUID,passwordHash,passwordSalt,webLoginKey,accountType from auth;
+select PrincipalID,ScopeID,UserTitle,FirstName,LastName,Email,ServiceURLs,active from useraccounts;
+select PrincipalID,FirstName,LastName,active from useraccounts;
+select FirstName,LastName from useraccounts A LEFT JOIN auth B on A.PrincipalID=B.UUID;
+
+SELECT UUID,Texture,State,PathBegin,PathEnd,Shape,ScaleX,ScaleY,ScaleZ,Media,Extraparams from primshapes LIMIT 100;
+
+
+SELECT concat(username, ' ', lastname) AS 'Online Users' FROM opensim.users
+INNER JOIN opensim.agents ON opensim.users.UUID = opensim.agents.UUID WHERE opensim.agents.agentonline = '1';
+
+SELECT inventoryName, InventoryID, assetID FROM inventoryitems WHERE inventoryName = 'My Inventory Item Name Here';
+
+SELECT name FROM opensim.assets WHERE hex(id) = replace('ef9c5edf-a9f8-4310-8048-97894453a614', '-', '');
+
+SELECT concat(inventoryName, ' - ',  replace(inventoryID, '-', '')) AS 'Inventory',
+concat(assets.name, ' - ', hex(assets.id)) AS 'Asset' FROM inventoryitems LEFT JOIN assets
+ON replace(assetID, '-', '')=hex(assets.id) WHERE inventoryName = 'My Inventory Item Here';
+
+SELECT concat(inventoryName, ' - ',  replace(inventoryID, '-', '')) AS 'Inventory',
+concat(assets.name, ' - ', hex(assets.id)) AS 'Asset' FROM opensim.inventoryitems INNER JOIN opensim.assets
+ON replace(assetID, '-', '')=hex(opensim.assets.id) WHERE opensim.assets.name = 'My Asset Name Here';
+
+SELECT count(uuid) AS 'Users' FROM opensim.users;
+SELECT count(UUID) AS 'Users Online' FROM opensim.agents WHERE agentonline = '1';
+
+SELECT count(DISTINCT regionUUID) FROM opensim.land;
+SELECT count(UUID) AS 'Parcels' FROM opensim.land;
+SELECT count(DISTINCT regionUUID) AS 'Regions' FROM opensim.terrain;
+SELECT count(DISTINCT regionName) AS 'Regions' FROM opensim.regions;
+SELECT count(UUID) AS 'Regions' FROM opensim.regions;
+
+#check empty assets
+SELECT inventoryname, inventoryID, assetID FROM opensim.inventoryitems WHERE replace(assetID, '-', '')
+NOT IN (SELECT hex(id) FROM opensim.assets);
+delete from primshapes using primshapes left join prims on prims.uuid=primshapes.uuid where prims.uuid is null;

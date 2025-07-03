@@ -1,0 +1,39 @@
+/* Cambiar password root@mysql */
+#mysqladmin -u root password newpassrod
+
+#mysql -uroot -newpass
+> USE mysql;
+> UPDATE USER SET PASSWORD=PASSWORD("newpass") WHERE User='diego';
+> FLUSH PRIVILEGES;
+> QUIT
+
+
+/* crear usuarios nuevos */
+
+#mysql --user=root mysql
+
+> CREATE USER 'diego'@'localhost IDENTIFIED BY 'pass';
+> GRANT ALL PRIVILEGES ON *.* TO 'diego'@'localhost' WITH GRANT OPTION;
+
+> CREATE USER 'admin'@'localhost';
+> GRANT RELOAD,PROCESS ON *.* TO 'admin'@'localhost';
+
+> CREATE USER 'dummy'@'localhost';
+> SHOW GRANTS FOR 'admin'@'localhost';
+
+> INSERT INTO user VALUES('localhost','diego',PASSWORD('pass'),'Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
+> INSERT INTO user (Host,User,Password) VALUES('localhost','dummy','');
+
+> CREATE USER 'user22'@'%.mydomain.com' IDENTIFIED BY 'mypass';
+> INSERT INTO user (Host,User,Password) VALUES('%.mydomain.com','myname',PASSWORD('mypass'),'');
+
+/* Actualizar la DB */
+>FLUSH PRIVILEGES;
+>QUIT
+
+> SELECT *
+    -> INTO OUTFILE '../home/miguel/out.innodb.file'
+    ->   FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+    ->   LINES TERMINATED BY 'n'
+    ->   FROM information_schema.schemata LIMIT 0, 5;
+
